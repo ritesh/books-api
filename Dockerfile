@@ -7,8 +7,7 @@ RUN cargo build --release
 RUN rm src/*.rs
 
 ADD . ./
-RUN ls -lR
-RUN rm ./target/release/deps/books-api*
+RUN rm ./target/release/deps/books_api*
 RUN cargo build --release
 
 
