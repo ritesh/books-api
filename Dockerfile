@@ -27,7 +27,7 @@ RUN groupadd $APP_USER \
     && useradd -g $APP_USER $APP_USER \
     && mkdir -p ${APP}
 
-COPY --from=builder /books-api/target/release/books_api ${APP}/books-api
+COPY --from=builder /books-api/target/release/books-api ${APP}/books-api
 
 RUN chown -R $APP_USER:$APP_USER ${APP}
 
