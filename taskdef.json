@@ -25,7 +25,7 @@
       "image": "REPOSITORY_URI:IMAGE_TAG",
       "portMappings": [
         {
-          "containerPort": 8080,
+          "containerPort": 3030,
           "protocol": "tcp"
         }
       ],
