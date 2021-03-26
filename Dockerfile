@@ -1,4 +1,4 @@
-FROM rust:latest as builder
+FROM public.ecr.aws/prima/rust:1.51.0-1 as builder
 
 RUN USER=root cargo new --bin books-api
 WORKDIR ./books-api
@@ -11,7 +11,7 @@ RUN rm ./target/release/deps/books_api*
 RUN cargo build --release
 
 
-FROM debian:buster-slim
+FROM public.ecr.aws/spw-develop/mirror/essential/debian-buster-slim:latest
 ARG APP=/usr/src/app
 
 RUN apt-get update \
