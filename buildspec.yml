@@ -1,12 +1,9 @@
 version: 0.2
 phases:
 
-  install:
-    runtime-versions:
-      golang: 1.15
   pre_build:
     commands:
-      - apt install -y jq
+      - apt install -y jq 
       - echo Logging into Amazon ECR
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
   build:
