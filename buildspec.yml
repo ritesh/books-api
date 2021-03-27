@@ -3,7 +3,6 @@ phases:
 
   pre_build:
     commands:
-      - apt install -y jq 
       - echo Logging into Amazon ECR
       - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 205477738723.dkr.ecr.eu-west-1.amazonaws.com
   build:
